@@ -21,6 +21,17 @@ class ViewController: UIViewController,
         mealNameLabel.text = textField.text
     }
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+        // Dismiss the picker if the user canceled.
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.originalImage] as? UIImage { photoImageView?.image = image
+            dismiss(animated: true, completion: nil)
+    } }
+    
     @IBOutlet weak var mealNameLabel: UILabel!
     
     @IBOutlet weak var nameTextField: UITextField!
