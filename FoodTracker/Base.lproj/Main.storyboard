@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Ge-Ub-apn">
-                                <rect key="frame" x="20" y="64" width="374" height="104.5"/>
+                                <rect key="frame" x="20" y="64" width="374" height="313"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WI-RV-3jW">
                                         <rect key="frame" x="0.0" y="0.0" width="86" height="20.5"/>
@@ -37,8 +37,19 @@
                                             <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6t8-ye-fWf"/>
                                         </connections>
                                     </button>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Defaultphoto" translatesAutoresizingMaskIntoConstraints="NO" id="pCA-aS-LZh">
+                                        <rect key="frame" x="0.0" y="114.5" width="374" height="198.5"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="pCA-aS-LZh" secondAttribute="height" multiplier="32:17" id="6oJ-fC-JnR"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="4YI-Nx-R6P" appends="YES" id="vgv-Ws-3hw"/>
+                                        </connections>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="pCA-aS-LZh" secondAttribute="trailing" id="9GU-je-IrY"/>
                                     <constraint firstAttribute="trailing" secondItem="5jV-AX-8c0" secondAttribute="trailing" id="YEv-tQ-Kip"/>
                                 </constraints>
                             </stackView>
@@ -54,14 +65,21 @@
                     <connections>
                         <outlet property="mealNameLabel" destination="6WI-RV-3jW" id="uay-g6-SGI"/>
                         <outlet property="nameTextField" destination="5jV-AX-8c0" id="6Fl-pB-oJZ"/>
+                        <outlet property="photoImageView" destination="pCA-aS-LZh" id="T2e-U4-Zm7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4YI-Nx-R6P">
+                    <connections>
+                        <action selector="selectImageFromLibrary:" destination="BYZ-38-t0r" id="1n9-Gu-RID"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-197" y="78"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Defaultphoto" width="540" height="540"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

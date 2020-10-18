@@ -8,7 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController,
-                      UITextFieldDelegate {
+                      UITextFieldDelegate,
+                      UIImagePickerControllerDelegate,
+                      UINavigationControllerDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // hide the keybaord
@@ -23,6 +25,8 @@ class ViewController: UIViewController,
     
     @IBOutlet weak var nameTextField: UITextField!
     
+    @IBOutlet weak var photoImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -31,6 +35,22 @@ class ViewController: UIViewController,
     }
 
 
+    @IBAction func selectImageFromLibrary(_ sender: UITapGestureRecognizer) {
+        
+        // hide the keyboard
+        nameTextField.resignFirstResponder()
+        
+        // initiate UIImagePickerController
+        let imagePickerController = UIImagePickerController()
+        
+        // allow to select photos from library, not from cametra
+        imagePickerController.sourceType = .photoLibrary
+        
+        // notify viewController with delegate
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
     @IBAction func setDefaultLabelText(_ sender: UIButton) {
         
         mealNameLabel.text = "Default Text"
