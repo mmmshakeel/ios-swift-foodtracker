@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,
+class MealViewController: UIViewController,
                       UITextFieldDelegate,
                       UIImagePickerControllerDelegate,
                       UINavigationControllerDelegate {
