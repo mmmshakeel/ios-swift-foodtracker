@@ -12,6 +12,8 @@ class MealViewController: UIViewController,
                       UIImagePickerControllerDelegate,
                       UINavigationControllerDelegate {
 
+    
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // hide the keybaord
         textField.resignFirstResponder()
@@ -19,6 +21,7 @@ class MealViewController: UIViewController,
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         mealNameLabel.text = textField.text
+        updateSaveButtonState()
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -38,11 +41,14 @@ class MealViewController: UIViewController,
     
     @IBOutlet weak var photoImageView: UIImageView!
     
+    @IBOutlet weak var saveMealButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         nameTextField.delegate = self
+        updateSaveButtonState()
     }
 
 
@@ -62,9 +68,19 @@ class MealViewController: UIViewController,
         present(imagePickerController, animated: true, completion: nil)
     }
     
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func setDefaultLabelText(_ sender: UIButton) {
         
         mealNameLabel.text = "Default Text"
+    }
+    
+    private func updateSaveButtonState() {
+        // disable the save button if the text field is empty
+        let text = nameTextField.text ?? ""
+        saveMealButton.isEnabled = !text.isEmpty
     }
 }
 
