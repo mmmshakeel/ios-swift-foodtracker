@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B36D32C62545D73500DAC426 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36D32C52545D73500DAC426 /* Meal.swift */; };
 		B3F1851E253BF49000250916 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F1851D253BF49000250916 /* AppDelegate.swift */; };
 		B3F18520253BF49000250916 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F1851F253BF49000250916 /* SceneDelegate.swift */; };
 		B3F18522253BF49000250916 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F18521253BF49000250916 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B36D32C52545D73500DAC426 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		B3F1851A253BF49000250916 /* FoodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F1851D253BF49000250916 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3F1851F253BF49000250916 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				B3F1851F253BF49000250916 /* SceneDelegate.swift */,
 				B3F18521253BF49000250916 /* ViewController.swift */,
 				B3F18523253BF49000250916 /* Main.storyboard */,
+				B36D32C52545D73500DAC426 /* Meal.swift */,
 				B3F18529253BF49200250916 /* Assets.xcassets */,
 				B3F1852B253BF49200250916 /* LaunchScreen.storyboard */,
 				B3F1852E253BF49200250916 /* Info.plist */,
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B36D32C62545D73500DAC426 /* Meal.swift in Sources */,
 				B3F18528253BF49000250916 /* FoodTracker.xcdatamodeld in Sources */,
 				B3F18522253BF49000250916 /* ViewController.swift in Sources */,
 				B3F1851E253BF49000250916 /* AppDelegate.swift in Sources */,
