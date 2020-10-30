@@ -13,6 +13,7 @@ class MealViewController: UIViewController,
                       UINavigationControllerDelegate {
 
     
+    var meal: Meal?
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // hide the keybaord
@@ -20,8 +21,9 @@ class MealViewController: UIViewController,
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        mealNameLabel.text = textField.text
         updateSaveButtonState()
+        mealNameLabel.text = textField.text
+        navigationItem.title = textField.text
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -52,6 +54,24 @@ class MealViewController: UIViewController,
     }
 
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        super.prepare(for: segue, sender: sender)
+        
+        // invoke only the save button is pressed
+        guard let button = sender as? UIBarButtonItem, button === saveMealButton else {
+            // if it is not the save button, log it here for debuging
+            
+            return
+        }
+        
+        let name = nameTextField.text ?? ""
+        let photo = photoImageView.image
+        
+        meal = Meal(name: name, photo: photo)
+    }
+    
+    
     @IBAction func selectImageFromLibrary(_ sender: UITapGestureRecognizer) {
         
         // hide the keyboard
