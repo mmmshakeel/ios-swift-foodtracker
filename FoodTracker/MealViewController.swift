@@ -50,6 +50,14 @@ class MealViewController: UIViewController,
         // Do any additional setup after loading the view.
         
         nameTextField.delegate = self
+        
+        // setup views if editing an existing meal
+        if let meal = meal {
+            navigationItem.title = meal.name
+            nameTextField.text = meal.name
+            photoImageView.image = meal.photo
+        }
+        
         updateSaveButtonState()
     }
 
@@ -89,7 +97,15 @@ class MealViewController: UIViewController,
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        
+        if isPresentingInAddMealMode {
+            dismiss(animated: true, completion: nil)
+        } else if let owningNavigationController = navigationController {
+            owningNavigationController.popViewController(animated: true)
+        } else {
+          fatalError("The MealViewController is not inside a navigation controller")
+        }
     }
     
     @IBAction func setDefaultLabelText(_ sender: UIButton) {

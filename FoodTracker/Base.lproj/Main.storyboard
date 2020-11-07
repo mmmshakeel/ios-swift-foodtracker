@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wY9-9Z-FOo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -70,7 +70,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Save" id="m2B-Y0-Xnn">
                             <connections>
-                                <segue destination="5Hp-ae-8EI" kind="unwind" unwindAction="unwindToMealListWithSender:" id="E7A-fU-9UJ"/>
+                                <segue destination="5Hp-ae-8EI" kind="unwind" unwindAction="unwindToMealListWithSender:" id="wvU-7N-2p1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -139,6 +139,7 @@
                                 <connections>
                                     <outlet property="menuName" destination="dpu-jL-1hp" id="Tsx-sR-Faa"/>
                                     <outlet property="menuPhoto" destination="HCM-qU-Ex8" id="qpF-6v-7HS"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="cw3-pi-RG9"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -151,7 +152,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="v7p-BH-IOR">
                             <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>
-                                <segue destination="AGC-tZ-Xje" kind="presentation" modalPresentationStyle="overFullScreen" id="jJj-ms-rOm"/>
+                                <segue destination="AGC-tZ-Xje" kind="presentation" identifier="AddItem" modalPresentationStyle="overFullScreen" id="jJj-ms-rOm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -194,9 +195,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SAY-cU-Ibz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="713.04347826086962" y="77.678571428571431"/>
+            <point key="canvasLocation" x="729" y="607"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="cw3-pi-RG9"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Defaultphoto" width="540" height="540"/>
         <systemColor name="systemBackgroundColor">
